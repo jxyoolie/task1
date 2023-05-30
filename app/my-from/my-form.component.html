@@ -1,0 +1,51 @@
+<form [formGroup]="Form" (ngSubmit)="OnSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Форма</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Число N</ion-label>
+        <ion-input
+          id="numberN"
+          type="number"
+          formControlName="numberN"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Число Х</ion-label>
+        <ion-input
+          id="numberX"
+          type="number"
+          formControlName="numberX"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"
+          >Кількість чисел в послідовності</ion-label
+        >
+        <ion-input id="nums" type="number" formControlName="nums"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button
+    type="submit"
+    expand="block"
+    fill="outline"
+    [disabled]="!Form.valid"
+    (click)="calculation(Inputxn)"
+  >
+    Submit
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Результат</ion-card-title>
+      <ion-card-content>
+        <ion-item> {{ result }} </ion-item>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</form>
